@@ -24,7 +24,7 @@
                                 <accessibility key="accessibilityConfiguration" label="Login"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="username"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Имя пользователя:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8CA-FH-nXb">
                                 <rect key="frame" x="111" y="80" width="152" height="21"/>
@@ -45,10 +45,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="olf-E1-qnW" userLabel="Vhod" colorLabel="IBBuiltInLabel-Blue">
-                                <rect key="frame" x="129" y="237" width="117" height="57"/>
+                                <rect key="frame" x="129" y="236" width="117" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" hint="vhod" identifier="button1" label="vhod">
                                     <accessibilityTraits key="traits" button="YES"/>
@@ -69,6 +69,9 @@
                     </view>
                     <connections>
                         <outlet property="button1" destination="olf-E1-qnW" id="qXo-Ua-Jgb"/>
+                        <outlet property="buttonVhod" destination="olf-E1-qnW" id="zqr-wU-SIo"/>
+                        <outlet property="textName" destination="gxY-LP-MTl" id="4LL-Qp-IqW"/>
+                        <outlet property="textPass" destination="5xU-pr-KUY" id="PEj-cc-zVG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

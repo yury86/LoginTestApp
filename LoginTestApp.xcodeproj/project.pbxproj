@@ -12,7 +12,32 @@
 		E617789A27103820004710E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E617789827103820004710E9 /* Main.storyboard */; };
 		E617789C27103852004710E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E617789B27103852004710E9 /* Assets.xcassets */; };
 		E617789F27103852004710E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E617789D27103852004710E9 /* LaunchScreen.storyboard */; };
+		E6BB483F27108EC90002ABAF /* Keychain.swift in Frameworks */ = {isa = PBXBuildFile; fileRef = E6BB483E27108EC90002ABAF /* Keychain.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E6BB484627108EF80002ABAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E6BB484027108EF80002ABAF /* KeychainAccess.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 140F195C1A49D79400B0016A;
+			remoteInfo = KeychainAccess;
+		};
+		E6BB484827108EF80002ABAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E6BB484027108EF80002ABAF /* KeychainAccess.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 140F19671A49D79500B0016A;
+			remoteInfo = KeychainAccessTests;
+		};
+		E6BB484A27108EF80002ABAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E6BB484027108EF80002ABAF /* KeychainAccess.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 14A630151D3293C700809B3F;
+			remoteInfo = TestHost;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		E617789127103820004710E9 /* LoginTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,6 +47,9 @@
 		E617789B27103852004710E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E617789E27103852004710E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E61778A027103853004710E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6BB483C27108EAD0002ABAF /* KeychainAccess.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = KeychainAccess.podspec; path = "../../KeychainAccess-4.2.2/New Folder With Items/KeychainAccess.podspec"; sourceTree = "<group>"; };
+		E6BB483E27108EC90002ABAF /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Keychain.swift; path = "../../KeychainAccess-4.2.2/New Folder With Items/Keychain.swift"; sourceTree = "<group>"; };
+		E6BB484027108EF80002ABAF /* KeychainAccess.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KeychainAccess.xcodeproj; path = "../../KeychainAccess-4.2.2/New Folder With Items/Lib/KeychainAccess.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6BB483F27108EC90002ABAF /* Keychain.swift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +69,7 @@
 			children = (
 				E617789327103820004710E9 /* LoginTestApp */,
 				E617789227103820004710E9 /* Products */,
+				E6BB483B27108EAC0002ABAF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +92,26 @@
 				E61778A027103853004710E9 /* Info.plist */,
 			);
 			path = LoginTestApp;
+			sourceTree = "<group>";
+		};
+		E6BB483B27108EAC0002ABAF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E6BB484027108EF80002ABAF /* KeychainAccess.xcodeproj */,
+				E6BB483E27108EC90002ABAF /* Keychain.swift */,
+				E6BB483C27108EAD0002ABAF /* KeychainAccess.podspec */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E6BB484127108EF80002ABAF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E6BB484727108EF80002ABAF /* KeychainAccess.framework */,
+				E6BB484927108EF80002ABAF /* KeychainAccessTests.xctest */,
+				E6BB484B27108EF80002ABAF /* TestHost.app */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -110,12 +160,42 @@
 			mainGroup = E617788827103820004710E9;
 			productRefGroup = E617789227103820004710E9 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = E6BB484127108EF80002ABAF /* Products */;
+					ProjectRef = E6BB484027108EF80002ABAF /* KeychainAccess.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				E617789027103820004710E9 /* LoginTestApp */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		E6BB484727108EF80002ABAF /* KeychainAccess.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = KeychainAccess.framework;
+			remoteRef = E6BB484627108EF80002ABAF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E6BB484927108EF80002ABAF /* KeychainAccessTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = KeychainAccessTests.xctest;
+			remoteRef = E6BB484827108EF80002ABAF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E6BB484B27108EF80002ABAF /* TestHost.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = TestHost.app;
+			remoteRef = E6BB484A27108EF80002ABAF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		E617788F27103820004710E9 /* Resources */ = {

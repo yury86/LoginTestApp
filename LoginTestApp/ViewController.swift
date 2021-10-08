@@ -7,15 +7,19 @@
 //
 
 import UIKit
+import KeychainAccess
 
 class ViewController: UIViewController {
-  
     
+    @IBOutlet weak var textName: UITextField!
+    @IBOutlet weak var buttonVhod: UIButton!
+    
+    @IBOutlet weak var textPass: UITextField!
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        @IBOutlet button1: UIButton()
-        @iboutlet
+       
         
         
         // Do any additional setup after loading the view, typically from a nib.
