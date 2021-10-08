@@ -9,9 +9,13 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        @IBOutlet button1: UIButton()
+        @iboutlet
         
         
         // Do any additional setup after loading the view, typically from a nib.
