@@ -9,6 +9,15 @@
 import UIKit
 import KeychainAccess
 
+class KeychainSingletone : SecClass {
+  static let key1 = 0
+    private init {
+        super.init()
+    }
+ 
+    
+}
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var textName: UITextField!
@@ -16,6 +25,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var textPass: UITextField!
    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
