@@ -7,15 +7,12 @@
 //
 
 import UIKit
-import KeychainAccess
 
-class KeychainSingletone : SecClass {
+class KeychainSingletone : UIViewController {
   static let key1 = 0
-    private init {
-        super.init()
-    }
- 
-    
+   /* private init() {
+     
+    }*/
 }
 
 class ViewController: UIViewController {

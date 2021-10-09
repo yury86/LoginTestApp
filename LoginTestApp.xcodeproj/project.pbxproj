@@ -12,6 +12,9 @@
 		E617789A27103820004710E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E617789827103820004710E9 /* Main.storyboard */; };
 		E617789C27103852004710E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E617789B27103852004710E9 /* Assets.xcassets */; };
 		E617789F27103852004710E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E617789D27103852004710E9 /* LaunchScreen.storyboard */; };
+		E6332E7627109B15003A6B8B /* KeychainAccess.podspec in Resources */ = {isa = PBXBuildFile; fileRef = E6BB483C27108EAD0002ABAF /* KeychainAccess.podspec */; };
+		E6332E7A27109B1B003A6B8B /* Keychain.swift in Resources */ = {isa = PBXBuildFile; fileRef = E6BB483E27108EC90002ABAF /* Keychain.swift */; };
+		E6332E7E27109D32003A6B8B /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6BB484727108EF80002ABAF /* KeychainAccess.framework */; };
 		E6BB483F27108EC90002ABAF /* Keychain.swift in Frameworks */ = {isa = PBXBuildFile; fileRef = E6BB483E27108EC90002ABAF /* Keychain.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6332E7E27109D32003A6B8B /* KeychainAccess.framework in Frameworks */,
 				E6BB483F27108EC90002ABAF /* Keychain.swift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -202,6 +206,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6332E7A27109B1B003A6B8B /* Keychain.swift in Resources */,
+				E6332E7627109B15003A6B8B /* KeychainAccess.podspec in Resources */,
 				E617789F27103852004710E9 /* LaunchScreen.storyboard in Resources */,
 				E617789C27103852004710E9 /* Assets.xcassets in Resources */,
 				E617789A27103820004710E9 /* Main.storyboard in Resources */,
