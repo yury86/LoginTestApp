@@ -12,33 +12,26 @@ import KeychainAccess
 class KeychainSingletone : UIViewController {
     static let key1 : Int32 = 0
    
-     func saveAction(sender: UIBarButtonItem) {
+     func saveAction(sender: UIButton) {
      let keychain: Keychain
-     if let service = serviceField.text, !service.isEmpty {
-     keychain = Keychain(service: service)
-     } else {
      keychain = Keychain()
+     keychain[textName.text!] = textPass.text
      }
-     keychain[usernameField.text!] = passwordField.text
-     
-     dismiss(animated: true, completion: nil)
-     }
-   /*
-     @IBAction func editingChanged(sender: UITextField) {
-     switch (usernameField.text, passwordField.text) {
+   
+     func editingChanged(sender: UITextField) {
+     switch (textName.text, textPass.text) {
      case let (username?, password?):
-     saveButton.isEnabled = !username.isEmpty && !password.isEmpty
+     buttonVhod.isEnabled = !username.isEmpty && !password.isEmpty
      case (_?, nil):
-     saveButton.isEnabled = false
+     buttonVhod.isEnabled = false
      case (nil, _?):
-     saveButton.isEnabled = false
+     buttonVhod.isEnabled = false
      case (nil, nil):
-     saveButton.isEnabled = false
+     buttonVhod.isEnabled = false
      }
      private init() {
-     
-    }*/
-
+        }
+    }
 }
 
 class ViewController: UIViewController {
