@@ -10,25 +10,33 @@ import UIKit
 import KeychainAccess
 
 class KeychainSingletone : UIViewController {
-    static let key1 : Int32 = 0
-   
+    static
+    @IBAction func save(_ sender: UIButton) {
+        let myKeychain: Keychain
+        myKeychain = Keychain()
+        myKeychain[textName.text!] = textPass.text
+        
+    }
+     /*
      func saveAction(sender: UIButton) {
-     let keychain: Keychain
+     let myKeychain: Keychain
      keychain = Keychain()
      keychain[textName.text!] = textPass.text
      }
+     */
    
-     func editingChanged(sender: UITextField) {
-     switch (textName.text, textPass.text) {
-     case let (username?, password?):
-     buttonVhod.isEnabled = !username.isEmpty && !password.isEmpty
-     case (_?, nil):
-     buttonVhod.isEnabled = false
-     case (nil, _?):
-     buttonVhod.isEnabled = false
-     case (nil, nil):
-     buttonVhod.isEnabled = false
-     }
+    @IBAction func editingChanged(_ sender: UITextField) {
+        switch (textName.text, textPass.text) {
+        case let (username?, password?):
+            buttonVhod.isEnabled = !username.isEmpty && !password.isEmpty
+        case (_?, nil):
+            buttonVhod.isEnabled = false
+        case (nil, _?):
+            buttonVhod.isEnabled = false
+        case (nil, nil):
+            buttonVhod.isEnabled = false
+            
+    }
      private init() {
         }
     }
