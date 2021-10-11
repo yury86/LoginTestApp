@@ -12,10 +12,18 @@ import KeychainAccess
 class KeychainSingletone {
     static let sharedInstance = KeychainSingletone()
     func saveKey(textNameK : String, textPassK : String ) {
-        let myKeychain: Keychain
+        var myKeychain: Keychain
         myKeychain = Keychain()
         myKeychain[textNameK] = textPassK
         print("save func")
+    }
+    func readKey(textNameK: String) -> String {
+        var myKeychain: Keychain
+        myKeychain = Keychain()
+        let token : String
+        token = try! myKeychain.getString(textNameK)!
+        print(#line, #function, token)
+        return token
     }
     private init() {}
 }
@@ -31,6 +39,7 @@ class ViewController: UIViewController {
     
     @IBAction func save(_ sender: UIButton) {
         KeychainSingletone.sharedInstance.saveKey(textNameK: textName.text!, textPassK: textPass.text!)
+        print(#line , #function, "bad save")
     }
     /*
      func saveAction(sender: UIButton) {
@@ -58,8 +67,15 @@ class ViewController: UIViewController {
         
     }
     @IBAction func buttonDown(_ sender: UIButton) {
-        KeychainSingletone.sharedInstance.saveKey(textNameK: textName.text!, textPassK: textPass.text!)
-        print("did loadd func")
+        //KeychainSingletone.sharedInstance.saveKey(textNameK: textName.text!, textPassK: textPass.text!)
+        if !textName.text!.isEmpty && !textPass.text!.isEmpty {
+            if KeychainSingletone.sharedInstance.readKey(textNameK: textName.text!) == textPass.text {
+                print(KeychainSingletone.sharedInstance.readKey(textNameK: textName.text!),"-read key")
+                print(#line, " sovpadenie")
+            }
+        }
+        
+        print("press button func")
         
     }
     @IBAction func buttonExitMain(_ sender: Any) {
@@ -68,7 +84,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       print("did loadd func")
+       print("did load func")
         
         
         // Do any additional setup after loading the view, typically from a nib.
