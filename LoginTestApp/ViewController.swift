@@ -15,6 +15,7 @@ class KeychainSingletone {
         let myKeychain: Keychain
         myKeychain = Keychain()
         myKeychain[textNameK] = textPassK
+        print("save func")
     }
     private init() {}
 }
@@ -23,6 +24,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var textName: UITextField!
     @IBOutlet weak var buttonVhod: UIButton!
+    @IBOutlet weak var button1: UIButton!
     
     @IBOutlet weak var textPass: UITextField!
    
@@ -52,12 +54,21 @@ class ViewController: UIViewController {
             buttonVhod.isEnabled = false
             
         }
+        print("edit func")
         
+    }
+    @IBAction func buttonDown(_ sender: UIButton) {
+        KeychainSingletone.sharedInstance.saveKey(textNameK: textName.text!, textPassK: textPass.text!)
+        print("did loadd func")
+        
+    }
+    @IBAction func buttonExitMain(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
+       print("did loadd func")
         
         
         // Do any additional setup after loading the view, typically from a nib.

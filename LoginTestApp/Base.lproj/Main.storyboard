@@ -60,8 +60,9 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <state key="normal" title="Войти"/>
                                 <connections>
+                                    <action selector="buttonDown:" destination="BYZ-38-t0r" eventType="touchDown" id="O8C-UU-gXe"/>
                                     <action selector="save:" destination="ApD-a6-PWy" eventType="touchUpInside" id="7y2-T9-3CY"/>
-                                    <segue destination="f6B-lV-oGf" kind="show" id="wXj-S5-LbJ"/>
+                                    <segue destination="f6B-lV-oGf" kind="show" identifier="showMain" id="nG6-q8-Act"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -72,7 +73,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="button1" destination="olf-E1-qnW" id="qXo-Ua-Jgb"/>
+                        <outlet property="button1" destination="olf-E1-qnW" id="ZO0-71-nB3"/>
                         <outlet property="buttonVhod" destination="olf-E1-qnW" id="zqr-wU-SIo"/>
                         <outlet property="textName" destination="gxY-LP-MTl" id="4LL-Qp-IqW"/>
                         <outlet property="textPass" destination="5xU-pr-KUY" id="PEj-cc-zVG"/>
@@ -86,18 +87,27 @@
         <!--View Controller-->
         <scene sceneID="tND-74-4Gg">
             <objects>
-                <viewController id="f6B-lV-oGf" sceneMemberID="viewController">
+                <viewController id="f6B-lV-oGf" customClass="ViewController" customModule="LoginTestApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O3T-VB-A6Y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHI-x1-qb2">
-                                <rect key="frame" x="166" y="323" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Главный экран" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHI-x1-qb2">
+                                <rect key="frame" x="128" y="285" width="119" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P5b-6F-nyP">
+                                <rect key="frame" x="164" y="148" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="buttonExit"/>
+                                <state key="normal" title="Выйти"/>
+                                <connections>
+                                    <action selector="buttonExitMain:" destination="f6B-lV-oGf" eventType="touchUpInside" id="YNp-iL-uyX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="yMX-th-bEG"/>
