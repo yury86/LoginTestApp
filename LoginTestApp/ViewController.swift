@@ -11,6 +11,7 @@ import KeychainAccess
 
 class KeychainSingletone {
     static let sharedInstance = KeychainSingletone()
+    var status = UserDefaults.standard.value(forKey: "status") as? Bool
     func saveKey(textNameK : String, textPassK : String ) {
         var myKeychain: Keychain
         myKeychain = Keychain()
@@ -70,6 +71,7 @@ class ViewController: UIViewController {
         //KeychainSingletone.sharedInstance.saveKey(textNameK: textName.text!, textPassK: textPass.text!)
         if !textName.text!.isEmpty && !textPass.text!.isEmpty {
             if KeychainSingletone.sharedInstance.readKey(textNameK: textName.text!) == textPass.text {
+                KeychainSingletone.sharedInstance.status = true
                 print(KeychainSingletone.sharedInstance.readKey(textNameK: textName.text!),"-read key")
                 print(#line, " sovpadenie")
             }
@@ -79,12 +81,16 @@ class ViewController: UIViewController {
         
     }
     @IBAction func buttonExitMain(_ sender: Any) {
+        KeychainSingletone.sharedInstance.status = false
         dismiss(animated: true, completion: nil)
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       print("did load func")
+        if KeychainSingletone.sharedInstance.status! {
+           
+        }
+        print("did load func")
         
         
         // Do any additional setup after loading the view, typically from a nib.
