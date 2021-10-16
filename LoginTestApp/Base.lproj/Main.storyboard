@@ -51,7 +51,7 @@
                                 <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="olf-E1-qnW" userLabel="Vhod" colorLabel="IBBuiltInLabel-Blue">
-                                <rect key="frame" x="129" y="236" width="117" height="57"/>
+                                <rect key="frame" x="129" y="286" width="117" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" hint="vhod" identifier="button1" label="vhod">
                                     <accessibilityTraits key="traits" button="YES"/>
@@ -62,13 +62,22 @@
                                 <connections>
                                     <action selector="buttonDown:" destination="BYZ-38-t0r" eventType="touchDown" id="O8C-UU-gXe"/>
                                     <action selector="save:" destination="ApD-a6-PWy" eventType="touchUpInside" id="7y2-T9-3CY"/>
-                                    <segue destination="f6B-lV-oGf" kind="show" identifier="showMain" id="nG6-q8-Act"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PmG-cb-X63">
+                                <rect key="frame" x="111" y="351" width="175" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="button2"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="Зарегистрироваться"/>
+                                <connections>
+                                    <action selector="buttonRegDown:" destination="BYZ-38-t0r" eventType="touchDown" id="rr6-Vs-oKI"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <accessibility key="accessibilityConfiguration">
-                            <accessibilityTraits key="traits" button="YES"/>
+                        <accessibility key="accessibilityConfiguration" identifier="view1">
+                            <accessibilityTraits key="traits" none="YES"/>
                         </accessibility>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -77,6 +86,8 @@
                         <outlet property="buttonVhod" destination="olf-E1-qnW" id="zqr-wU-SIo"/>
                         <outlet property="textName" destination="gxY-LP-MTl" id="4LL-Qp-IqW"/>
                         <outlet property="textPass" destination="5xU-pr-KUY" id="PEj-cc-zVG"/>
+                        <outlet property="textStatus" destination="w1H-Xb-Lh2" id="CvY-77-4dy"/>
+                        <segue destination="f6B-lV-oGf" kind="show" identifier="goVC" id="Obb-Ti-mT5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -87,7 +98,7 @@
         <!--View Controller-->
         <scene sceneID="tND-74-4Gg">
             <objects>
-                <viewController id="f6B-lV-oGf" customClass="ViewController" customModule="LoginTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vcMain" id="f6B-lV-oGf" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O3T-VB-A6Y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -110,8 +121,12 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <accessibility key="accessibilityConfiguration" identifier="view2"/>
                         <viewLayoutGuide key="safeArea" id="yMX-th-bEG"/>
                     </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="goView1" id="FKG-Dk-VDs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bj6-b1-oSo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -30,25 +30,28 @@ class KeychainSingletone {
 }
 
 class ViewController: UIViewController {
-    
+    var status : Bool = false
+    // MARK: - Outlets
     @IBOutlet weak var textName: UITextField!
     @IBOutlet weak var buttonVhod: UIButton!
     @IBOutlet weak var button1: UIButton!
     
+    @IBOutlet weak var textStatus: UILabel!
     @IBOutlet weak var textPass: UITextField!
    
-    
+    // MARK: - Actions
     @IBAction func save(_ sender: UIButton) {
         KeychainSingletone.sharedInstance.saveKey(textNameK: textName.text!, textPassK: textPass.text!)
         print(#line , #function, "bad save")
     }
-    /*
-     func saveAction(sender: UIButton) {
-     let myKeychain: Keychain
-     keychain = Keychain()
-     keychain[textName.text!] = textPass.text
-     }
-     */
+    
+    @IBAction func buttonRegDown(_ sender: Any) {
+       //KeychainSingletone.sharedInstance.saveKey(textNameK: textName.text!, textPassK: textPass.text!)
+        print(#line, #function)
+        performSegue(withIdentifier: "goVC", sender: nil)
+        //let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle                                                                                                                                                                                                                                                                                                    )
+        
+    }
     
     @IBAction func editingChanged(_ sender: UITextField) {
         ///let ViewController = super.presentingViewController
@@ -68,34 +71,44 @@ class ViewController: UIViewController {
         
     }
     @IBAction func buttonDown(_ sender: UIButton) {
-        //KeychainSingletone.sharedInstance.saveKey(textNameK: textName.text!, textPassK: textPass.text!)
+        
         if !textName.text!.isEmpty && !textPass.text!.isEmpty {
             if KeychainSingletone.sharedInstance.readKey(textNameK: textName.text!) == textPass.text {
-                KeychainSingletone.sharedInstance.status = true
+                UserDefaults.standard.set(true, forKey: "status")
                 print(KeychainSingletone.sharedInstance.readKey(textNameK: textName.text!),"-read key")
                 print(#line, " sovpadenie")
             }
         }
-        
+      //  isBut1Down = true
         print("press button func")
         
     }
     @IBAction func buttonExitMain(_ sender: Any) {
-        KeychainSingletone.sharedInstance.status = false
-        dismiss(animated: true, completion: nil)
+        UserDefaults.standard.set(false, forKey: "status")
         
+        dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "goView1", sender: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        if KeychainSingletone.sharedInstance.status! {
-           
+        print("did load func begin")
+        if UserDefaults.standard.value(forKey: "status") == nil {
+            UserDefaults.standard.set(false, forKey: "status")
+            status = false
         }
-        print("did load func")
-        
-        
+        // try? textStatus.text = String(UserDefaults.standard.bool(forKey: "status"))
+        // if user is singed in and button ..Voiti.. is down (first lounch)
+        if  UserDefaults.standard.bool(forKey: "status")/* && !isBut1Down */ {
+            print("did load func - status true")
+            performSegue(withIdentifier: "goVC", sender: nil)
+        }
+        print("did load func end")
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
-
+    
+        
+    
 
 }
 
