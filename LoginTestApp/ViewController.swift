@@ -35,7 +35,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var textName: UITextField!
     @IBOutlet weak var buttonVhod: UIButton!
     @IBOutlet weak var button1: UIButton!
-    
     @IBOutlet weak var textStatus: UILabel!
     @IBOutlet weak var textPass: UITextField!
    
@@ -48,7 +47,9 @@ class ViewController: UIViewController {
     @IBAction func buttonRegDown(_ sender: Any) {
        //KeychainSingletone.sharedInstance.saveKey(textNameK: textName.text!, textPassK: textPass.text!)
         print(#line, #function)
-        performSegue(withIdentifier: "goVC", sender: nil)
+        let vc = storyboard?.instantiateViewController(withIdentifier: "vcMain")
+        self.present(vc!, animated: true, completion: nil)
+        //performSegue(withIdentifier: "goVC", sender: nil)
         //let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle                                                                                                                                                                                                                                                                                                    )
         
     }
@@ -83,12 +84,7 @@ class ViewController: UIViewController {
         print("press button func")
         
     }
-    @IBAction func buttonExitMain(_ sender: Any) {
-        UserDefaults.standard.set(false, forKey: "status")
-        
-        dismiss(animated: true, completion: nil)
-        performSegue(withIdentifier: "goView1", sender: nil)
-    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         print("did load func begin")

@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LoginTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vcLogin" id="BYZ-38-t0r" customClass="ViewController" customModule="LoginTestApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -95,42 +95,43 @@
             </objects>
             <point key="canvasLocation" x="69.599999999999994" y="32.833583208395808"/>
         </scene>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tND-74-4Gg">
             <objects>
-                <viewController storyboardIdentifier="vcMain" id="f6B-lV-oGf" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vcMain" id="f6B-lV-oGf" customClass="MainViewController" customModule="LoginTestApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O3T-VB-A6Y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P5b-6F-nyP">
+                                <rect key="frame" x="164" y="148" width="83" height="106"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="buttonExit"/>
+                                <state key="normal" title="Выйти"/>
+                                <connections>
+                                    <action selector="buttonExitPress:" destination="f6B-lV-oGf" eventType="touchUpInside" id="feo-Iq-qdM"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Главный экран" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHI-x1-qb2">
-                                <rect key="frame" x="128" y="285" width="119" height="21"/>
+                                <rect key="frame" x="146" y="262" width="119" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P5b-6F-nyP">
-                                <rect key="frame" x="164" y="148" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration" identifier="buttonExit"/>
-                                <state key="normal" title="Выйти"/>
-                                <connections>
-                                    <action selector="buttonExitMain:" destination="f6B-lV-oGf" eventType="touchUpInside" id="YNp-iL-uyX"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <accessibility key="accessibilityConfiguration" identifier="view2"/>
                         <viewLayoutGuide key="safeArea" id="yMX-th-bEG"/>
                     </view>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="goView1" id="FKG-Dk-VDs"/>
+                        <outlet property="buttonExit" destination="P5b-6F-nyP" id="fd6-Sj-r7a"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="goVC1" id="WRU-Ia-GQH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bj6-b1-oSo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="767" y="33"/>
+            <point key="canvasLocation" x="765.60000000000002" y="32.833583208395808"/>
         </scene>
     </scenes>
 </document>
