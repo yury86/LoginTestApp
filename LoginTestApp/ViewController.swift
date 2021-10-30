@@ -21,10 +21,11 @@ class KeychainSingletone {
     func readKey(textNameK: String) -> String {
         var myKeychain: Keychain
         myKeychain = Keychain()
-        let token : String
-        token = try! myKeychain.getString(textNameK)!
-        print(#line, #function, token)
-        return token
+        if let token = try? myKeychain.getString(textNameK) {
+            return token!
+        }
+        print(#line, #function, "bad account")
+        return ""
     }
     private init() {}
 }
@@ -39,19 +40,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var textPass: UITextField!
    
     // MARK: - Actions
-    @IBAction func save(_ sender: UIButton) {
-        KeychainSingletone.sharedInstance.saveKey(textNameK: textName.text!, textPassK: textPass.text!)
-        print(#line , #function, "bad save")
-    }
     
     @IBAction func buttonRegDown(_ sender: Any) {
-       //KeychainSingletone.sharedInstance.saveKey(textNameK: textName.text!, textPassK: textPass.text!)
+      if !textName.text!.isEmpty && !textPass.text!.isEmpty {
+        //KeychainSingletone.sharedInstance.saveKey(textNameK: textName.text!, textPassK: textPass.text!)
         print(#line, #function)
+        UserDefaults.standard.set(true, forKey: "status")
         let vc = storyboard?.instantiateViewController(withIdentifier: "vcMain")
         self.present(vc!, animated: true, completion: nil)
         //performSegue(withIdentifier: "goVC", sender: nil)
         //let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle                                                                                                                                                                                                                                                                                                    )
-        
+      }
+      
     }
     
     @IBAction func editingChanged(_ sender: UITextField) {
@@ -78,27 +78,33 @@ class ViewController: UIViewController {
                 UserDefaults.standard.set(true, forKey: "status")
                 print(KeychainSingletone.sharedInstance.readKey(textNameK: textName.text!),"-read key")
                 print(#line, " sovpadenie")
+                UserDefaults.standard.set(false, forKey: "status")
+                let vc = storyboard?.instantiateViewController(withIdentifier: "vcMain")
+                self.present(vc!, animated: true, completion: nil)
+            } else {
+                textStatus.text = "отказ в доступе"
             }
         }
+         UserDefaults.standard.set(true, forKey: "status")
       //  isBut1Down = true
-        print("press button func")
+        print(#line, "press button func end")
         
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("did load func begin")
+        print(#line, "did load func begin")
         if UserDefaults.standard.value(forKey: "status") == nil {
             UserDefaults.standard.set(false, forKey: "status")
             status = false
         }
-        // try? textStatus.text = String(UserDefaults.standard.bool(forKey: "status"))
+        textStatus.text = String(UserDefaults.standard.bool(forKey: "status"))
         // if user is singed in and button ..Voiti.. is down (first lounch)
         if  UserDefaults.standard.bool(forKey: "status")/* && !isBut1Down */ {
-            print("did load func - status true")
+            print(#line, "did load func - status true")
             performSegue(withIdentifier: "goVC", sender: nil)
         }
-        print("did load func end")
+        print(#line, "did load func end")
         // Do any additional setup after loading the view, typically from a nib.
         
     }
