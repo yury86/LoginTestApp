@@ -14,6 +14,7 @@
 		E617789C27103852004710E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E617789B27103852004710E9 /* Assets.xcassets */; };
 		E617789F27103852004710E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E617789D27103852004710E9 /* LaunchScreen.storyboard */; };
 		E61A9F7E272CB31900A955CD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61A9F7D272CB31900A955CD /* MainViewController.swift */; };
+		E61A9F8327387FBB00A955CD /* KeychainSingletone.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61A9F8227387FBB00A955CD /* KeychainSingletone.swift */; };
 		E6332E7E27109D32003A6B8B /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6BB484727108EF80002ABAF /* KeychainAccess.framework */; };
 		E6E990AB2711DF5500C1FF26 /* KeychainAccess.xcodeproj in Frameworks */ = {isa = PBXBuildFile; fileRef = E6BB484027108EF80002ABAF /* KeychainAccess.xcodeproj */; };
 		E6E990AC2711DFAF00C1FF26 /* Keychain.swift in Frameworks */ = {isa = PBXBuildFile; fileRef = E6E990A62711DF0000C1FF26 /* Keychain.swift */; };
@@ -55,6 +56,7 @@
 		E617789E27103852004710E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E61778A027103853004710E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E61A9F7D272CB31900A955CD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E61A9F8227387FBB00A955CD /* KeychainSingletone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainSingletone.swift; sourceTree = "<group>"; };
 		E6BB483C27108EAD0002ABAF /* KeychainAccess.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = KeychainAccess.podspec; path = "../../KeychainAccess-4.2.2/New Folder With Items/KeychainAccess.podspec"; sourceTree = "<group>"; };
 		E6BB483E27108EC90002ABAF /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Keychain.swift; path = "../../KeychainAccess-4.2.2/New Folder With Items/Keychain.swift"; sourceTree = "<group>"; };
 		E6BB484027108EF80002ABAF /* KeychainAccess.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KeychainAccess.xcodeproj; path = "../../KeychainAccess-4.2.2/New Folder With Items/Lib/KeychainAccess.xcodeproj"; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				E617789427103820004710E9 /* AppDelegate.swift */,
 				E617789627103820004710E9 /* ViewController.swift */,
 				E61A9F7D272CB31900A955CD /* MainViewController.swift */,
+				E61A9F8227387FBB00A955CD /* KeychainSingletone.swift */,
 				E617789827103820004710E9 /* Main.storyboard */,
 				E617789B27103852004710E9 /* Assets.xcassets */,
 				E617789D27103852004710E9 /* LaunchScreen.storyboard */,
@@ -287,6 +290,7 @@
 				E61A9F7E272CB31900A955CD /* MainViewController.swift in Sources */,
 				E617789727103820004710E9 /* ViewController.swift in Sources */,
 				E617789527103820004710E9 /* AppDelegate.swift in Sources */,
+				E61A9F8327387FBB00A955CD /* KeychainSingletone.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

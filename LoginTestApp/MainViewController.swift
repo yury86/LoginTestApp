@@ -15,10 +15,11 @@ class MainViewController: UIViewController {
    
     @IBAction func buttonExitPress(_ sender: Any) {
         UserDefaults.standard.set(false, forKey: "status")
+        self.view.removeFromSuperview()
         dismiss(animated: true, completion: nil)
-        //performSegue(withIdentifier: "goVC1", sender: nil)
-        //self.show(vc, sender: sender)
+        
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
