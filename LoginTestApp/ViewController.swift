@@ -21,11 +21,15 @@ class KeychainSingletone {
     func readKey(textNameK: String) -> String {
         var myKeychain: Keychain
         myKeychain = Keychain()
-        if let token = try? myKeychain.getString(textNameK) {
-            return token!
+        let token = try? myKeychain.getString(textNameK)
+        if token == nil {
+            return ""
         }
-        print(#line, #function, "bad account")
-        return ""
+        else {
+            return token! ?? ""
+        }
+        //print(#line, #function)
+        
     }
     private init() {}
 }
@@ -85,8 +89,6 @@ class ViewController: UIViewController {
                 textStatus.text = "отказ в доступе"
             }
         }
-         UserDefaults.standard.set(true, forKey: "status")
-      //  isBut1Down = true
         print(#line, "press button func end")
         
     }
@@ -102,7 +104,10 @@ class ViewController: UIViewController {
         // if user is singed in and button ..Voiti.. is down (first lounch)
         if  UserDefaults.standard.bool(forKey: "status")/* && !isBut1Down */ {
             print(#line, "did load func - status true")
-            performSegue(withIdentifier: "goVC", sender: nil)
+            let vc = storyboard?.instantiateViewController(withIdentifier: "vcMain")
+            self.present(vc!, animated: true, completion: nil)
+            viewconot
+            //performSegue(withIdentifier: "goVC", sender: nil)
         }
         print(#line, "did load func end")
         // Do any additional setup after loading the view, typically from a nib.
