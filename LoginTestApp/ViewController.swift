@@ -105,8 +105,11 @@ class ViewController: UIViewController {
         if  UserDefaults.standard.bool(forKey: "status")/* && !isBut1Down */ {
             print(#line, "did load func - status true")
             let vc = storyboard?.instantiateViewController(withIdentifier: "vcMain")
-            self.present(vc!, animated: true, completion: nil)
-            viewconot
+            self.addChild(vc!)
+            self.view.addSubview(vc!.view)
+            vc!.didMove(toParent: self)
+            //self.present(vc!, animated: true, completion: nil)
+            
             //performSegue(withIdentifier: "goVC", sender: nil)
         }
         print(#line, "did load func end")
